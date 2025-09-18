@@ -1,25 +1,48 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AuthPage from "./pages/AuthPage";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+// import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+// import AuthProvider from "./context/AuthProvider.jsx";
+// import Registration from "./pages/Registration";
+// import Login from "./pages/Signin";
+// import Home from "./pages/Home";
+// import "./App.css";
 
-function App() {
+// function App() {
+//   return (
+//     <Router>
+//       <AuthProvider>
+//         <Routes>
+//           {/* Default → Register */}
+//           <Route path="/" element={<Registration />} />
+//           <Route path="/login" element={<Login />} />
+//           <Route path="/home" element={<Home />} />
+
+//           {/* Fallback */}
+//           <Route path="*" element={<Navigate to="/" />} />
+//         </Routes>
+//       </AuthProvider>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider";
+import Registration from "./pages/Registration";
+import Login from "./pages/Signin";
+import Home from "./pages/Home";
+
+export default function App() {
   return (
-    <Router>
+    // <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<Navigate to="/auth" />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </AuthProvider>
-    </Router>
+    // </BrowserRouter>
   );
 }
-
-export default App;
