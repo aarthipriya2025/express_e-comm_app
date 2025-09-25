@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../css/navbar.css";
 import { FiShoppingCart, FiMoreVertical } from "react-icons/fi";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -37,28 +38,46 @@ export default function Navbar() {
             </button>
             {loginOpen && (
               <div className="absolute top-full right-0 mt-2 w-48 bg-white shadow-lg border rounded-md py-2">
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   New Customer? <span className="text-blue-600">Signup</span>
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   My Profile
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   Orders
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   Wishlist
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   Rewards
                 </a>
               </div>
             )}
           </div>
 
-          <div className="flex items-center gap-1 text-gray-700 hover:text- cursor-pointer">
+          <Link
+            to="/shop"
+            className="flex items-center gap-1 text-gray-700 cursor-pointer hover:text-blue-600"
+          >
             <span className="text-xl font-black md:font-extrabold">Shop</span>
-          </div>
+          </Link>
 
           {/* Cart */}
           <div className="flex items-center gap-1 text-gray-700 hover:text-#0c1018 cursor-pointer">
@@ -77,13 +96,22 @@ export default function Navbar() {
             </button>
             {moreOpen && (
               <div className="absolute top-full right-0 mt-2 w-52 bg-white shadow-lg border rounded-md py-2">
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   Notifications
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   24 x 7 Customer Care
                 </a>
-                <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+                <a
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  href="#"
+                >
                   Download App
                 </a>
               </div>

@@ -31,6 +31,8 @@ import AuthProvider from "./context/AuthProvider";
 import Registration from "./pages/Registration";
 import Login from "./pages/Signin";
 import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Product from "./pages/Product";
 
 export default function App() {
   return (
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
       </AuthProvider>
     // </BrowserRouter>
